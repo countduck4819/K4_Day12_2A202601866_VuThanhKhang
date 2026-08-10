@@ -14,7 +14,7 @@
 
 Trong `Settings`, `api_token` không có giá trị mặc định nên app chết ngay khi
 khởi động nếu thiếu biến môi trường. Hãy mô tả một tình huống cụ thể mà việc
-"chết sớm" này cứu bạn, so với việc để mặc định `"changeme"`.
+"chết sớm" này cứu bạn,so với việc để mặc định `"changeme"`.
 
 > Ví dụ: khi deploy production mà quên set API_TOKEN, nếu có mặc định "changeme" thì app vẫn chạy và người khác có thể dùng token đó để gọi API, gây phát sinh chi phí. Nếu không có giá trị mặc định, app sẽ dừng ngay khi khởi động, giúp phát hiện lỗi cấu hình trước khi service được public.
 
