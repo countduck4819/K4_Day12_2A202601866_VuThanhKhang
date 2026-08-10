@@ -35,4 +35,20 @@ def emit(event: str, severity: str = "INFO", **fields) -> str:
         >>> emit("chat_completed", client_id="sv01", usd_cost=0.0001)
         '{"event": "chat_completed", "severity": "INFO", "ts": "...", ...}'
     """
+    data = {
+        "event": event,
+        "severity": severity.upper(),
+        "ts": utc_now_iso(),
+    }
+
+    data.update(fields)
+
+    log_line = json.dumps(data, ensure_ascii=False)
+
+    print(log_line)
+
+    return log_line
     raise NotImplementedError("TODO (CP1): cài đặt emit")
+
+   
+    
